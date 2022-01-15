@@ -1,0 +1,47 @@
+POST http://localhost:3000/api/wallet/createNewWallet
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+  "walletName": "[lam] wallet 1",
+  "walletDescription": "description of wallet 1",
+  "walletBalance": 1000,
+  "totalInclude": true
+}
+
+### get wallet
+POST http://localhost:3000/api/wallet/getWallet
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+  "walletID": "61e2888d2d154b75779db913"
+}
+
+### get wallet by User
+GET http://localhost:3000/api/wallet/getWalletByUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkOGI4YjA0ZDQyODA0YmRlODgzOWIiLCJpYXQiOjE2NDIwNDEyNTh9.VLKY4qrk6GhzT1g5BWPmtH5-uncI8cxbPrLNNcibwXc
+
+### update wallet
+POST http://localhost:3000/api/wallet/updateWallet
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+  "walletID": "61e2888d2d154b75779db913",
+  "newWalletName": "[lam] wallet 1 updated",
+  "newWalletDescription": "description of wallet 1 updated",
+  "newWalletBalance": 1100,
+  "newTotalInclude": true
+}
+
+
+### delete wallet
+DELETE http://localhost:3000/api/wallet/deleteWallet
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+  "walletID": "61e2795527eb88dbe78b6d34"
+}

@@ -1,0 +1,101 @@
+### register
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+    "userName": "lam2",
+    "email": "lam.2002.2019@gmail.com",
+    "hashPassword": "6b86b273ff34fce19d6b804effraa3f574ada4eaa22f1d49c01e52ddb7875b4b"
+}
+
+### verify email
+GET http://localhost:3000/api/user/emailVerify/61dd2e349dfffdb47291ca62
+
+### login
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+    "email": "lam.2002.2015@gmail.com",
+    "hashPassword": "6b86b273ff34fce19d6b804effraa3f574ada4eaa22f1d49c01e52ddb7875b4b"
+}
+
+### forgot password
+POST http://localhost:3000/api/user/forgotPassword
+Content-Type: application/json
+
+{
+    "email": "lam.2002.2019@gmail.com"
+}
+
+### change password manually link
+GET http://localhost:3000/api/user/changePasswordManuallyLink/61dd8b8b04d42804bde8839b
+
+### change password manually
+POST http://localhost:3000/api/user/changePasswordManually/61dd8b8b04d42804bde8839b
+
+### get user info
+GET http://localhost:3000/api/user/info
+Content-Type: Application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMTU4NDN9._bggpfbBNVB5Xe-mtAwVYAiiOTyMU0ijw3uAbtReSGE
+
+### change user name
+POST http://localhost:3000/api/user/changeName
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkOGI4YjA0ZDQyODA0YmRlODgzOWIiLCJpYXQiOjE2NDE5Njg0MTd9.hxYGdJ54ei3Tp8zkxPEvs9zbWsVlK5oNKpUxZWXn800
+
+{
+    "newUserName": "lam"
+}
+
+### switch currency unit
+POST http://localhost:3000/api/user/switchCurrencyUnit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMTU4NDN9._bggpfbBNVB5Xe-mtAwVYAiiOTyMU0ijw3uAbtReSGE
+    
+{
+    "currencyUnit": "VND"
+}
+
+### change password
+POST http://localhost:3000/api/user/changePassword
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkOGI4YjA0ZDQyODA0YmRlODgzOWIiLCJpYXQiOjE2NDE5Njg0MTd9.hxYGdJ54ei3Tp8zkxPEvs9zbWsVlK5oNKpUxZWXn800
+
+{
+    "oldHashPassword": "563b64239b8c000e833e1e8aa3b0bbc0c015f35cfa7f7301d9d95840da453c47",
+    "newHashPassword": "a388100a13d0387f9842dc74d3e6c068228adfd89259a8eb0754a1c9131360b0"
+}
+
+### delete user
+DELETE http://localhost:3000/api/user/delete
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkOGI4YjA0ZDQyODA0YmRlODgzOWIiLCJpYXQiOjE2NDIyMTA5MTh9.srvT5jMmUlm6N-gmsNYB1tIRtiQ3oduBAsPC5yr-1BI
+
+### delete unverified user
+POST http://localhost:3000/api/user/deleteUnverifiedUser
+
+### add trade group
+POST http://localhost:3000/api/user/addTradeGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMTUwNjh9.u-7eWHrabciFD89tg4v57vHtqxYdp_AOL_Lkv3c_JBQ
+
+{
+    "group": "others",
+    "type": "income"
+}
+
+### get all trade groups
+GET http://localhost:3000/api/user/getAllTradeGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMTUwNjh9.u-7eWHrabciFD89tg4v57vHtqxYdp_AOL_Lkv3c_JBQ
+
+### delete trade group
+DELETE http://localhost:3000/api/user/deleteTradeGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyNDk0NDZ9.KtQaKCvI40d-GMUveHiFiwdQEqgSvrP9zgY3eESCYlk
+
+{
+    "group": "shopping updated",
+    "type": "spend"
+}

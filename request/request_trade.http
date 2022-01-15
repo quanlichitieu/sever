@@ -1,0 +1,67 @@
+### add a trade
+POST http://localhost:3000/api/trade/addTrade
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+    "walletID": "61e2888d2d154b75779db913",
+    "tradeGroup": "salary",
+    "amount": 40,
+    "type": "income",
+    "date": "31-01-2021",
+    "walletInclude": true
+}
+
+### update a trade
+POST http://localhost:3000/api/trade/updateTrade
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+    "walletID": "61e2888d2d154b75779db913",
+    "tradeID": "61e28cabfdb175c13a3ead9d",
+    "newTradeGroup": "shopping updated",
+    "newAmount": -60,
+    "newType": "spend",
+    "newDate": "31-05-2021",
+    "newWalletInclude": false
+}
+
+### delete a trade
+DELETE http://localhost:3000/api/trade/deleteTrade
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+    "walletID": "61e2888d2d154b75779db913",
+    "tradeID": "61e28cabfdb175c13a3ead9d"
+}
+
+### delete multiple trades
+DELETE http://localhost:3000/api/trade/deleteManyTrade
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+    "walletID": "61e2888d2d154b75779db913",
+    "tradeIDList": ["61e28c17783c86c965e58dd4", "61e28b35a83666ca3cf7c5ac"]
+}
+
+### get a trade
+GET http://localhost:3000/api/trade/getTrade
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+    "walletID": "61e2888d2d154b75779db913",
+    "tradeID": "61e2894d2d154b75779db923"
+}
+
+### get all trades
+GET http://localhost:3000/api/trade/getAllTrade
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+
+{
+    "walletID": "61e2888d2d154b75779db913"
+}
