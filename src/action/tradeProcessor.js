@@ -2,10 +2,11 @@
 const TradeModel = require('../model/trade')
 
 const createTradeProcessor = function (user, wallet, payload) {
-    const { tradeGroup, amount, type, date, walletInclude } = payload
+    const { tradeGroup, amount, type, date, walletInclude, tradeDescription } = payload
     const newTrade = new TradeModel({
         walletID: wallet.walletID,
         tradeGroup,
+        tradeDescription,
         amount,
         type,
         date,
@@ -17,8 +18,8 @@ const createTradeProcessor = function (user, wallet, payload) {
     return newTrade
 }
 
-const updateTradeProcessor = async function (user, wallet, trade, payload) {
-    const { newTradeGroup, newAmount, newType, newDate, newWalletInclude } = payload
+const updateTradeProcessor = function (user, wallet, trade, payload) {
+    const { newTradeGroup, newAmount, newType, newDate, newWalletInclude, newTradeDescription } = payload
     wallet.walletBalance += newAmount - trade.amount
     user.totalBalance += newAmount - trade.amount
     trade.tradeGroup = newTradeGroup
@@ -26,6 +27,7 @@ const updateTradeProcessor = async function (user, wallet, trade, payload) {
     trade.type = newType
     trade.date = newDate
     trade.walletInclude = newWalletInclude
+    trade.tradeDescription = newTradeDescription
 }
 
 const deleteTradeProcessor = async function (user, wallet, trade) {

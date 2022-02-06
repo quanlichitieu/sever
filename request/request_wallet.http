@@ -1,12 +1,12 @@
 POST http://localhost:3000/api/wallet/createNewWallet
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDQwNjkyNzF9.nXz955Ke1a7aC35Eq47CTEqhDMd9IRKLx4w9Z9oROvU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDQxMjYyNDF9.fIwV9QTpGV6ELQW4ucO7MMIkq3OWNJKiNe9zale293A
 
 {
-  "walletName": "[lam] wallet 33333",
+  "walletName": "[lam] wallet 22222",
   "walletDescription": "dffdgftyhn rtysbger yerysert agvter fgerfg ergerg er",
-  "walletBalance": 120000,
-  "totalInclude": false
+  "walletBalance": 150000,
+  "totalInclude": true
 }
 
 ### get wallet
@@ -29,11 +29,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
 {
-  "walletID": "61e2888d2d154b75779db913",
+  "walletID": "61ff6860f34e24bd35827c95",
   "newWalletName": "[lam] wallet 1 updated",
   "newWalletDescription": "description of wallet 1 updated",
-  "newWalletBalance": 1100,
-  "newTotalInclude": true
+  "newWalletBalance": 118000,
+  "newTotalInclude": false
 }
 
 

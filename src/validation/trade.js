@@ -24,10 +24,23 @@ const dateValidate = function (date) {
     if (!date.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/))
         throw new Error('Invalid data')
 }
+const yearValidate = function (year) {
+    if (typeof year !== 'number')
+        throw new Error('Invalid data')
+    if (!year.toString().match(/^(19|20)\d{2}$/))
+        throw new Error('Invalid year')
+}
 const booleanValidate = function (boolean) {
     if (typeof boolean != 'boolean')
         throw new Error('Must be either true or false')
 }
+const tradeDescriptionValidate = function (description) {
+    if (typeof description !== 'string')
+        throw new Error('Invalid data')
+    if (description.length >= 2000)
+        throw new Error('description is too long')
+}
+
 const idValidate = function (id) {
     if (typeof id !== 'string')
         throw new Error('Invalid data')
@@ -79,7 +92,7 @@ const deleteTradeGroupValidate = async function (user, group, type) {
     }
 }
 
-const addTradeValidate = function (tradeGroup, amount, type, date, walletInclude) {
+const addTradeValidate = function (tradeGroup, amount, type, date, walletInclude, tradeDescription) {
     try {
         nameValidate(tradeGroup)
         moneyValidate(amount)
@@ -87,12 +100,13 @@ const addTradeValidate = function (tradeGroup, amount, type, date, walletInclude
         dateValidate(date)
         booleanValidate(walletInclude)
         typeValidate(type, amount)
+        tradeDescriptionValidate(tradeDescription)
     } catch (error) {
         throw new Error(error.message)
     }
 }
 
-const updateTradeValidate = function (tradeGroup, amount, type, date, walletInclude, id) {
+const updateTradeValidate = async function (tradeGroup, amount, type, date, walletInclude, id, tradeDescription) {
     try {
         nameValidate(tradeGroup)
         moneyValidate(amount)
@@ -101,6 +115,10 @@ const updateTradeValidate = function (tradeGroup, amount, type, date, walletIncl
         booleanValidate(walletInclude)
         idValidate(id)
         typeValidate(type, amount)
+        tradeDescriptionValidate(tradeDescription)
+        const trade = await TradeModel.findOne({ tradeID: id })
+        if (!trade)
+            throw new Error('Trade does not exist')
     } catch (error) {
         throw new Error(error.message)
     }
@@ -130,7 +148,8 @@ const getTradeValidate = async function (tradeID) {
     }
 }
 
-module.exports = { 
+module.exports = {
+    yearValidate,
     addTradeGroupValidate,
     deleteTradeGroupValidate,
     addTradeValidate,

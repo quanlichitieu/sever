@@ -11,5 +11,6 @@ router.delete('/deleteTrade', authorization, walletAuthorization, trade.deleteTr
 router.delete('/deleteManyTrade', authorization, walletAuthorization, trade.deleteManyTrade)
 router.get('/getTrade', authorization, walletAuthorization, trade.getTrade)
 router.get('/getAllTrade', authorization, walletAuthorization, trade.getAllTrade)
+router.get('/getTradesByYear', authorization, walletAuthorization, trade.getTradesByYear)
 
 module.exports = router

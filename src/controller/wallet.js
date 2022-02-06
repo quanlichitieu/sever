@@ -26,7 +26,8 @@ class Wallet {
                 amount: walletBalance,
                 type: walletBalance > 0 ? 'income' : 'spend',
                 date: getCurrentDate(), 
-                walletInclude: true
+                walletInclude: true,
+                tradeDescription: 'Initial balance'
             })
             await newTrade.save()
             await wallet.save()
@@ -73,8 +74,10 @@ class Wallet {
                 amount: newWalletBalance - wallet.walletBalance,
                 type: newWalletBalance > wallet.walletBalance ? 'income' : 'spend',
                 date: getCurrentDate(), 
-                walletInclude: true
+                walletInclude: true,
+                tradeDescription: 'Update balance'
             })
+            console.log(newTrade);
             await newTrade.save()
             await wallet.save()
             await user.save()

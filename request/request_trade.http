@@ -4,10 +4,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
 {
-    "walletID": "61e2888d2d154b75779db913",
-    "tradeGroup": "salary",
-    "amount": 40,
-    "type": "income",
+    "walletID": "61ff6860f34e24bd35827c95",
+    "tradeGroup": "somethingelse",
+    "tradeDescription": "description here !!!",
+    "amount": -1500,
+    "type": "spend",
     "date": "31-01-2021",
     "walletInclude": true
 }
@@ -18,23 +19,24 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
 {
-    "walletID": "61e2888d2d154b75779db913",
-    "tradeID": "61e28cabfdb175c13a3ead9d",
-    "newTradeGroup": "shopping updated",
-    "newAmount": -60,
+    "walletID": "61ff6860f34e24bd35827c95",
+    "tradeID": "61ff6b69f34e24bd35827cb8",
+    "newTradeGroup": "somethingelse",
+    "newTradeDescription": "des: shopping updated",
+    "newAmount": -6000,
     "newType": "spend",
     "newDate": "31-05-2021",
-    "newWalletInclude": false
+    "newWalletInclude": true
 }
 
 ### delete a trade
 DELETE http://localhost:3000/api/trade/deleteTrade
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDQxMjYyNDF9.fIwV9QTpGV6ELQW4ucO7MMIkq3OWNJKiNe9zale293A
 
 {
-    "walletID": "61e2888d2d154b75779db913",
-    "tradeID": "61e28cabfdb175c13a3ead9d"
+    "walletID": "61ff6860f34e24bd35827c95",
+    "tradeID": "61ff6b69f34e24bd35827cb8"
 }
 
 ### delete multiple trades
@@ -44,7 +46,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyM
 
 {
     "walletID": "61e2888d2d154b75779db913",
-    "tradeIDList": ["61e28c17783c86c965e58dd4", "61e28b35a83666ca3cf7c5ac"]
+    "tradeIDList": ["61ff6b69f34e24bd35827cb8", "61e288f12d154b75779db91d"]
 }
 
 ### get a trade
@@ -53,8 +55,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
 {
-    "walletID": "61e2888d2d154b75779db913",
-    "tradeID": "61e2894d2d154b75779db923"
+    "walletID": "61ff6860f34e24bd35827c95",
+    "tradeID": "61ff6b69f34e24bd35827cb8"
 }
 
 ### get all trades
@@ -63,5 +65,15 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
 {
-    "walletID": "61e2888d2d154b75779db913"
+    "walletID": "61ff6860f34e24bd35827c95"
+}
+
+### get trades by year
+GET http://localhost:3000/api/trade/getTradesByYear
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDQxMjYyNDF9.fIwV9QTpGV6ELQW4ucO7MMIkq3OWNJKiNe9zale293A
+
+{
+    "walletID": "61ff6860f34e24bd35827c95",
+    "year": 2022
 }
