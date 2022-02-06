@@ -50,7 +50,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyM
 }
 
 ### get a trade
-GET http://localhost:3000/api/trade/getTrade
+POST http://localhost:3000/api/trade/getTrade
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
@@ -60,7 +60,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyM
 }
 
 ### get all trades
-GET http://localhost:3000/api/trade/getAllTrade
+POST http://localhost:3000/api/trade/getAllTrade
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMzIwMTF9.R3SEfAFwKfPCWhYNlPOD84gQbs1C0LJzrce0ECbAIUc
 
@@ -69,7 +69,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyM
 }
 
 ### get trades by year
-GET http://localhost:3000/api/trade/getTradesByYear
+POST http://localhost:3000/api/trade/getTradesByYear
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDQxMjYyNDF9.fIwV9QTpGV6ELQW4ucO7MMIkq3OWNJKiNe9zale293A
 
