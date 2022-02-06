@@ -21,6 +21,6 @@ router.post('/addTradeGroup', authorization, user.addTradeGroup)
 router.get('/getAllTradeGroup', authorization, user.getAllTradeGroup)
 router.delete('/deleteTradeGroup/', authorization, user.deleteTradeGroup)
 
-// router.post('/deleteUnverifiedUser', user.deleteUnverifiedUser)
+router.post('/deleteUnverifiedUser', user.deleteUnverifiedUser)
 
 module.exports = router

@@ -44,7 +44,7 @@ class User {
             const user = await UserModel.findOne({ email })
             if (!user)
                 throw new Error('Email or password is incorrect')
-            if (user.hashPassword != hashPassword)
+            if (user.hashPassword !== hashPassword)
                 throw new Error('Email or password is incorrect')
             if (!user.emailActive)
                 return res.status(400).json({ success: false, message: 'Email not verified' })
@@ -90,7 +90,7 @@ class User {
             emailValidate(email)
             const user = await UserModel.findOne({ email })
             if (!user)
-                throw new Error('User not found')
+                return res.status(200).json({ success: true, message: 'email sent' })
             forgotPassword(email, user.userID)
             res.status(200).json({ success: true, message: 'email sent' })
         } catch (error) {
@@ -110,10 +110,10 @@ class User {
                 <h1>change password</h1>
                 <form method="POST" action="${process.env.DEPLOY_URL}/api/user/changePasswordManually/${user.userID}">
                     <p>Enter new password</p>
-                    <input type="text" name="newPassword" id="newPassword"/>
+                    <input type="password" name="newPassword" id="newPassword"/>
                     <br />
                     <p>Retype new password</p>
-                    <input type="text" name="newPasswordRetyped" id="newPasswordRetyped"/>
+                    <input type="password" name="newPasswordRetyped" id="newPasswordRetyped"/>
                     <br />
                     <br />
                     <input type="submit" />
@@ -134,6 +134,8 @@ class User {
                 throw new Error('password is invalid')
             if (newPassword != newPasswordRetyped)
                 throw new Error('password does not match')
+            if (newPassword.length < 6)
+                throw new Error('password is too short')
             const user = await UserModel.findOne({ userID: p })
             if (!user)
                 throw new Error('user not found')

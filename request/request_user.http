@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "lam.2002.2015@gmail.com",
-    "hashPassword": "6b86b273ff34fce19d6b804effraa3f574ada4eaa22f1d49c01e52ddb7875b4b"
+    "hashPassword": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
 }
 
 ### forgot password
@@ -25,7 +25,7 @@ POST http://localhost:3000/api/user/forgotPassword
 Content-Type: application/json
 
 {
-    "email": "lam.2002.2019@gmail.com"
+    "email": "lam.2002.20195@gmail.com"
 }
 
 ### change password manually link
@@ -37,15 +37,15 @@ POST http://localhost:3000/api/user/changePasswordManually/61dd8b8b04d42804bde88
 ### get user info
 GET http://localhost:3000/api/user/info
 Content-Type: Application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDIyMTU4NDN9._bggpfbBNVB5Xe-mtAwVYAiiOTyMU0ijw3uAbtReSGE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDM5NTQ3ODh9.KhT35LGFfKhMgAkZ70b-4xxIwbQalEE-YOePTx973H8
 
 ### change user name
 POST http://localhost:3000/api/user/changeName
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkOGI4YjA0ZDQyODA0YmRlODgzOWIiLCJpYXQiOjE2NDE5Njg0MTd9.hxYGdJ54ei3Tp8zkxPEvs9zbWsVlK5oNKpUxZWXn800
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyMmU3ZGY5ODUxZGVhZTMzNzEyM2UiLCJpYXQiOjE2NDI4NDI5NDV9.Bs6oTCcLUNR6PKKo5s0NiX62nBfVaLkYst_DuXdASbw
 
 {
-    "newUserName": "lam"
+    "newUserName": "lamlam"
 }
 
 ### switch currency unit
@@ -70,7 +70,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkO
 ### delete user
 DELETE http://localhost:3000/api/user/delete
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWRkOGI4YjA0ZDQyODA0YmRlODgzOWIiLCJpYXQiOjE2NDIyMTA5MTh9.srvT5jMmUlm6N-gmsNYB1tIRtiQ3oduBAsPC5yr-1BI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MWUyZTY2Mjg2YjY3MTdkOGU3NzEyMjkiLCJpYXQiOjE2NDI4NDI4NDl9.hlArjrkuAKBiPhpOvJzpSsZt4BSFm4LqaYJjjmMRIVM
 
 ### delete unverified user
 POST http://localhost:3000/api/user/deleteUnverifiedUser
