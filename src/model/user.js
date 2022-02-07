@@ -8,7 +8,7 @@ const userSchema = new Schema({
     emailActive: { type: Boolean, default: false, required: true},
     hashPassword: { type: String, required: true},
     totalBalance: { type: Number, default: 0, required: true},
-    currencyUnit: { type: String, default: 'USD', required: true, enum: ['USD', 'VND']},
+    currencyUnit: { type: String, default: 'USD', required: true, enum: ['USD', 'VND', 'EUR', 'GBP', 'JPY', 'CNY', 'AUD', 'KRW']},
 }, {
     timestamps: true
 })
